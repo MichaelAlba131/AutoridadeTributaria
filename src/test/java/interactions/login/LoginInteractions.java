@@ -29,7 +29,7 @@ public class LoginInteractions extends LoginPage {
     public static void OpenUrl() throws IOException {
         String url = URLAmbient(String.valueOf(ExtractInformationYAML.TypeLogin.SIGIP));
         url = url.replace("AMBIENT_YAML", GetInfoAmbient().getAmbient().toLowerCase());
-        driver.navigate().to("https://www.google.com.br");
+        driver.navigate().to(url);
         Allure.step("Navegar para Url:" + url);
     }
 
