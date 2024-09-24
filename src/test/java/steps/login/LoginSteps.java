@@ -19,14 +19,12 @@ public class LoginSteps extends LoginInteractions {
             case "Email Global Pages":
                 user = "Email Teste 2";
                 break;
-            case "Global User Veragi":
-                user = ExtractInformationYAML.GetInfoUsers().getUserSIGIPDEV().get(0).getUsername();
-                password = ExtractInformationYAML.GetInfoUsers().getUserSIGIPDEV().get(1).getPassword();
+            case "User Sigip":
+                user = ExtractInformationYAML.GetInfoUsers().getUsersSigipDev().get(0).getUsername();
+                password = ExtractInformationYAML.GetInfoUsers().getUsersSigipDev().get(1).getPassword();
         }
         action()
-                .FillUser(user)
-                .FillPassword(password)
-                .ClickAcessar();
+                .FillUserAndPassword(user, password);
 
     }
 }

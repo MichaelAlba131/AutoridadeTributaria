@@ -1,5 +1,8 @@
 package configuration.classes.users;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import java.util.List;
 
 public class Users {
@@ -7,28 +10,25 @@ public class Users {
     public Users() {
     }
 
-    public Users(List<userSIGIPDEV> userSIGIPDEV,List<userSIGIPDEV> userSIGIPQUA) {
+    public Users(List<userSIGIPDEV> userSIGIPDEV) {
         this.userSIGIPDEV = userSIGIPDEV;
-        this.userSIGIPQUA = userSIGIPQUA;
     }
 
     @Override
     public String toString() {
         return "Users{" +
-                "userSIGIPDEV=" + userSIGIPDEV +
-                "userSIGIPQUA=" + userSIGIPQUA +
+                "usersSigipDev=" + userSIGIPDEV +
                 '}';
     }
 
-    public List<userSIGIPDEV> userSIGIPDEV;
 
-    public List<userSIGIPDEV> userSIGIPQUA;
-
-    public List<configuration.classes.users.userSIGIPDEV> getUserSIGIPDEV() {
+    public List<userSIGIPDEV> getUsersSigipDev() {
         return userSIGIPDEV;
     }
 
-    public List<configuration.classes.users.userSIGIPDEV> getUserSIGIPQUA() {
-        return userSIGIPQUA;
+    public void setUsersSigipDev(List<userSIGIPDEV> userSIGIPDEV) {
+        this.userSIGIPDEV = userSIGIPDEV;
     }
+
+    public List<userSIGIPDEV> userSIGIPDEV;
 }

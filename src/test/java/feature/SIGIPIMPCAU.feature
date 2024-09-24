@@ -5,10 +5,11 @@
 Funcionalidade: Criar Declaracao de Importacao
   Designada a criar uma declaração de importação usando o sistema backoffice
 
-  Fundo:
-    Dado que o utilizador acede ao backoffice usando "User Sigip" and "Password Sigip"
+#  Fundo:
+#    Dado que o utilizador acede ao backoffice usando "User Sigip" and "Password Sigip"
 
   Esquema do Cenario: [Modulo] - "<cenario>"
+    Dado que o utilizador acede ao backoffice usando "User Sigip" and "Password Sigip"
 #    Dado Selecionar o menu Administração com a opção de "Pesquisa de Importação"
 #    E Clicar no botão criar
 #    E Criar uma declaracao de importacao usando o "<arquivo>"

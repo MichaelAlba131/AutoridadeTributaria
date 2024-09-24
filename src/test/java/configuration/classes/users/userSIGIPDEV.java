@@ -3,8 +3,10 @@ package configuration.classes.users;
 import lombok.Getter;
 import lombok.Setter;
 
-
 public class userSIGIPDEV {
+
+    public userSIGIPDEV() {
+    }
 
     public userSIGIPDEV(String username, String password) {
         this.username = username;
