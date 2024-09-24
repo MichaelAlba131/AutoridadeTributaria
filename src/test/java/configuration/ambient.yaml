@@ -3,6 +3,6 @@ version: 0.0.1
 date: 2024-09-17
 ambient: DEV
 url:
-  - system: SIGIP
-    value: http://sigipcaub.tainfpautalAMBIENT_YAML.ritta.local/
+  - system: QUOTA2
+    value: http://quota2cauintra.tacontingentesdev.ritta.local/intra/app/
 

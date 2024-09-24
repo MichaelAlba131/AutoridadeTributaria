@@ -1,12 +1,16 @@
 package functions;
 
+import configuration.classes.ExtractInformationYAML;
 import io.cucumber.java.Scenario;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import java.io.IOException;
 import java.util.HashMap;
+import static configuration.classes.ExtractInformationYAML.GetInfoAmbient;
+import static configuration.classes.ExtractInformationYAML.URLAmbient;
 
 public class FunctionsHook {
 
@@ -33,6 +37,12 @@ public class FunctionsHook {
             local_chrome = System.getProperty("user.dir") + "/driver/windows/chromedriver";
         System.setProperty("webdriver.chrome.driver", local_chrome);
         String downloadFilepath = System.getProperty("user.dir") + "/src/test/java/files/downloadCSV";
+        String url = URLAmbient(String.valueOf(ExtractInformationYAML.TypeLogin.QUOTA2));
+        url = url.replace("AMBIENT_YAML", GetInfoAmbient().getAmbient().toLowerCase());
+        System.setProperty("http.proxyHost", url);
+        System.setProperty("http.proxyPort", "8080");
+        System.setProperty("http.proxyUser", "XY29318");
+        System.setProperty("http.proxyPassword", "Teste-29318%");
         HashMap<String, Object> chromePrefs = new HashMap<String, Object>();
         chromePrefs.put("profile.default_content_settings.popups", 0);
         chromePrefs.put("download.default_directory", downloadFilepath);
@@ -54,7 +64,11 @@ public class FunctionsHook {
         optionsChrome.setExperimentalOption("w3c", true);
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability(ChromeOptions.CAPABILITY, optionsChrome);
+        capabilities.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true);
         optionsChrome.merge(capabilities);
+        ChromeOptions options = new ChromeOptions();
+        options.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true);
+        options.merge(capabilities);
         Driver.driver = new ChromeDriver(optionsChrome);
         return Driver.driver;
     }

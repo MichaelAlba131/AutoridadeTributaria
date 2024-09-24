@@ -16,7 +16,7 @@
         <cucumber.java.version>5.7.0</cucumber.java.version>
         <junit.version>4.13.2</junit.version>
         <junit.jupiter.version>5.11.0</junit.jupiter.version>
-        <selenium.java.version>4.1.4</selenium.java.version>
+        <selenium.java.version>4.0.0-rc-1</selenium.java.version>
         <jackson.dataformat.version>2.14.2</jackson.dataformat.version>
         <allure.maven.version>2.11.2</allure.maven.version>
         <allure.version>2.13.6</allure.version>
@@ -55,7 +55,7 @@
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
-            <version>${selenium.java.version}</version>
+            <version>4.0.0-alpha-6</version>
         </dependency>
         <dependency>
             <groupId>com.fasterxml.jackson.dataformat</groupId>
@@ -89,6 +89,11 @@
             <version>${allure.version}</version>
         </dependency>
         <dependency>
+            <groupId>com.squareup.okhttp3</groupId>
+            <artifactId>okhttp</artifactId>
+            <version>4.9.1</version>
+        </dependency>
+        <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <version>1.18.34</version>
@@ -104,6 +109,7 @@
             <artifactId>slf4j-simple</artifactId>
             <version>${slf4j.version}</version>
         </dependency>
+
     </dependencies>
     <build>
         <plugins>

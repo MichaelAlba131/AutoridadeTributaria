@@ -11,7 +11,7 @@ import java.io.IOException;
 public class ExtractInformationYAML {
 
     public enum TypeLogin {
-        SIGIP,
+        QUOTA2
     }
 
     public static Ambient GetInfoAmbient() throws IOException {
